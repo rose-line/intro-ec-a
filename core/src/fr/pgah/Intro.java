@@ -65,6 +65,9 @@ public class Intro extends ApplicationAdapter {
         montent[i] = true;
       }
     }
+
+    // dummy
+
   }
 
   private void majCoordonnees() {
