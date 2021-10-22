@@ -133,25 +133,25 @@ public class Intro extends ApplicationAdapter {
     for (int i = 0; i <= 1; i++) {
 
       // Si le sprite tape en haut...
-      if (coordonneesY[i] + hauteursImgs[i] == hauteurFenetre) {
+      if (coordonneesY[i] + hauteursImgs[i] >= hauteurFenetre) {
         // on retient qu'il doit maintenant aller vers le bas
         versLeHaut[i] = false;
       }
 
       // Si le sprite tape en bas...
-      if (coordonneesY[i] == 0) {
+      if (coordonneesY[i] <= 0) {
         // on retient qu'il doit maintenant aller vers le haut
         versLeHaut[i] = true;
       }
 
       // Si le sprite tape à droite...
-      if (coordonneesX[i] + largeursImgs[i] == largeurFenetre) {
+      if (coordonneesX[i] + largeursImgs[i] >= largeurFenetre) {
         // on retient qu'il doit maintenant aller vers la gauche
         versLaDroite[i] = false;
       }
 
       // Si le sprite tape à gauche...
-      if (coordonneesX[i] == 0) {
+      if (coordonneesX[i] <= 0) {
         // on retient qu'il doit maintenant aller vers la droite
         versLaDroite[i] = true;
       }
@@ -170,10 +170,10 @@ public class Intro extends ApplicationAdapter {
       // Si le sprite i va vers la droite
       if (versLaDroite[i]) {
         // on augmente X
-        coordonneesX[i] = coordonneesX[i] + 1; // incrémentation
+        coordonneesX[i] = coordonneesX[i] + 4; // incrémentation
       } else { // sinon
         // on diminue X (il va vers la gauche)
-        coordonneesX[i] = coordonneesX[i] - 1; // décrémentation
+        coordonneesX[i] = coordonneesX[i] - 4; // décrémentation
       }
     }
 
@@ -184,10 +184,10 @@ public class Intro extends ApplicationAdapter {
       // Si le sprite i va vers le haut
       if (versLeHaut[i]) {
         // on augmente Y
-        coordonneesY[i] = coordonneesY[i] + 1; // incrémentation
+        coordonneesY[i] = coordonneesY[i] + 4; // incrémentation
       } else { // sinon
         // on dinminue Y (il va vers la gauche)
-        coordonneesY[i] = coordonneesY[i] - 1; // décrémentation
+        coordonneesY[i] = coordonneesY[i] - 4; // décrémentation
       }
     }
   }
